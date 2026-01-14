@@ -12,6 +12,7 @@
     "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "react": "^19.2.3",
+    "react-animated-cursor": "^2.11.2",
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
