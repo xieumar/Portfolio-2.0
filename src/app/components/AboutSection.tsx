@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <>
-      <div className="w-full bg-background-light dark:bg-background-dark leading-[0]">
+      <div className="w-full bg-background-light dark:bg-background-dark leading-0">
         <svg
           className="w-full h-16 md:h-24 text-white dark:text-gray-900 fill-current"
           preserveAspectRatio="none"

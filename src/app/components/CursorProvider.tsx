@@ -7,10 +7,10 @@ export default function CursorProvider() {
     <AnimatedCursor
       innerSize={8}
       outerSize={35}
-      color="0, 0, 0"
+      color="139, 92, 246"
       outerAlpha={0.5}
-      innerScale={0.7}
-      outerScale={2}
+      innerScale={0.6}
+      outerScale={1.2}
       clickables={["a", "button"]}
     />
   );
