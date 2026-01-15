@@ -1,4 +1,3 @@
-// Add your global type definitions here
 export type Project = {
   id: string;
   title: string;

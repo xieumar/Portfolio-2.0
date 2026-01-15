@@ -1,20 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../styles/globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
+import CursorProvider from "./components/CursorProvider";
 
 export const metadata: Metadata = {
- title: 'Zainab Umar Ibrahim | Frontend Engineer',
-  description: 'Frontend engineer specializing in React, Next.js, and TypeScript...',
+  title: 'Cassie | Frontend Developer & Designer',
+  description: 'Creative frontend developer and designer building interactive experiences for the web.',
 };
 
 export default function RootLayout({
@@ -24,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <meta charSet="utf-8" />
+      </head>
+      <body className="bg-background-light dark:bg-background-dark font-body text-gray-800 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
+        <CursorProvider />
         {children}
       </body>
     </html>
