@@ -9,6 +9,16 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                display: ["Fredoka", "sans-serif"],
+                body: ["Nunito", "sans-serif"],
+            },
+            borderRadius: {
+                DEFAULT: "1rem",
+                "xl": "1.5rem",
+                "2xl": "2rem",
+                "3xl": "2.5rem",
+            },
             colors: {
                 primary: "#8B5CF6",
                 secondary: "#C084FC",
@@ -17,7 +27,6 @@ const config: Config = {
                 "background-dark": "#1F2937",
                 "surface-light": "#FFFFFF",
                 "surface-dark": "#374151",
-                // New pastel palette
                 "sage-light": "#E2E8DE",
                 "sage-dark": "#4A5D4F",
                 "terracotta-light": "#FFE4D6",
@@ -29,16 +38,6 @@ const config: Config = {
                 "pastel-pink": "#FCE7F3",
                 "pastel-yellow": "#FEF3C7",
                 "pastel-green": "#D1FAE5",
-            },
-            fontFamily: {
-                display: ["Fredoka", "sans-serif"],
-                body: ["Nunito", "sans-serif"],
-            },
-            borderRadius: {
-                DEFAULT: "1rem",
-                "xl": "1.5rem",
-                "2xl": "2rem",
-                "3xl": "2.5rem",
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
