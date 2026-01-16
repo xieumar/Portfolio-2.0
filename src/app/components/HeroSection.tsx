@@ -5,7 +5,7 @@ import { Mail, MoveRight, Github, Twitter } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <header className="relative pt-32 pb-24 px-6 lg:px-12 flex items-center justify-center min-h-[90vh] bg-(--background-light) dark:bg-background-dark">
+    <header className="relative pt-32 pb-20 px-6 lg:px-12 flex items-center justify-center min-h-[90vh] bg-(--background-light) dark:bg-background-dark">
       <FloatingIcons />
       <div className="container mx-auto max-w-7xl z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
         <Illustration />
