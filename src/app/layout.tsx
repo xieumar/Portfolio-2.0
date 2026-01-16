@@ -15,14 +15,13 @@ export default function RootLayout({
   return (
    
 
-<html lang="en" suppressHydrationWarning>
-  
-  <body className="bg-background-light dark:bg-background-dark font-body text-gray-800 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
     <AppThemeProvider>
-      <CursorProvider />
-      {children}
+      <html lang="en">
+        <body className="bg-background-light dark:bg-background-dark font-body text-gray-800 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden min-h-screen flex flex-col">
+          <CursorProvider />
+          {children}
+        </body>
+      </html>
     </AppThemeProvider>
-  </body>
-</html>
   );
 }
