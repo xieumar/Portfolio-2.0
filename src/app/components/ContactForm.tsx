@@ -1,5 +1,7 @@
 'use client';
 
+import {ArrowRight} from 'lucide-react';
+
 import { FormEvent, useState } from 'react';
 
 export default function ContactSection() {
@@ -85,7 +87,7 @@ export default function ContactSection() {
               type="submit"
             >
               Send Message
-              <span className="material-symbols-outlined font-bold">send</span>
+              <ArrowRight/>
             </button>
           </form>
         </div>

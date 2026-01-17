@@ -1,3 +1,5 @@
+import {ArrowRight} from 'lucide-react';
+
 export default function ProjectsSection() {
   const projects = [
     {
@@ -108,9 +110,7 @@ export default function ProjectsSection() {
                   href="#"
                 >
                   View Case Study{' '}
-                  <span className="material-symbols-outlined text-xl transform group-hover:translate-x-1 transition-transform">
-                    arrow_forward
-                  </span>
+                  <ArrowRight />
                 </a>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function ProjectsSection() {
             className="inline-block px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             href="#"
           >
-            See More Projects on GitHub
+            See More Projects
           </a>
         </div>
       </div>

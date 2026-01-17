@@ -29,7 +29,7 @@ export default function AboutSection() {
                   <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                     Hello! I'm Zainab.
                   </h3>
-                  <p className="mb-2 text-gray-700 dark:text-gray-200 text-base sm:text-lg lg:text-xl leading-relaxed font-medium text-justify">
+                  <p className="mb-2 text-gray-700 dark:text-white text-base sm:text-lg lg:text-xl leading-relaxed font-medium text-justify">
                     I'm a creative developer based in Nigeria. I bridge the gap between
                     <strong className="text-green-700 dark:text-green-300"> design and engineering</strong>, crafting user interfaces that feel alive. I believe the web should be fun, accessible, and a little bit magical.
                   </p>
@@ -49,7 +49,7 @@ export default function AboutSection() {
 
 
             {/* Currently Learning */}
-            <div className="col-span-1 md:col-span-1 row-span-1 bg-(--terracotta-light) dark:bg-(--terracotta-dark) rounded-3xl p-6 flex flex-col justify-between group hover:shadow-xl transition-shadow duration-300">
+            <div className="col-span-1 md:col-span-1 row-span-1 bg-[var(--terracotta-light)] dark:bg-[var(--terracotta-dark)] rounded-3xl p-6 flex flex-col justify-between group hover:shadow-xl transition-shadow duration-300">
               <div className="flex justify-between items-start">
                 <h4 className="font-display text-xl font-bold text-gray-800 dark:text-white">
                   Currently Learning
@@ -94,7 +94,7 @@ export default function AboutSection() {
             </div>
 
             {/* Gaming */}
-            <div className="col-span-1 md:col-span-1 row-span-1 bg-green-100 dark:bg-blue-900/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:shadow-xl transition-shadow duration-300">
+            <div className="col-span-1 md:col-span-1 row-span-1 bg-green-100 dark:bg-green-900/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:shadow-xl transition-shadow duration-300">
               <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:rotate-12 transition-transform">
                 <TvMinimalPlay className='text-green-500' />
               </div>

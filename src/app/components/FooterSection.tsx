@@ -1,3 +1,5 @@
+import { ArrowUp } from "lucide-react";
+
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -7,7 +9,7 @@ export default function Footer() {
     <footer className="bg-white dark:bg-gray-900 pt-16 pb-8 border-t border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-6 max-w-7xl flex flex-col items-center">
         <a className="font-display font-bold text-3xl text-primary tracking-wide mb-8" href="#">
-          cassie.
+          zainab.
         </a>
         <div className="flex items-center gap-6 mb-8">
           <a
@@ -47,15 +49,13 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center">
           <p className="font-body font-bold text-gray-500 dark:text-gray-400 mb-2">
-            © 2023 Cassie. Built with 💜 and ☕.
+            © 2026 Zainab. Built with 💜 and ☕.
           </p>
           <button
             className="mt-4 p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary text-gray-400 rounded-full transition-all duration-300 group"
             onClick={scrollToTop}
           >
-            <span className="material-symbols-outlined transform group-hover:-translate-y-1 transition-transform">
-              arrow_upward
-            </span>
+            <ArrowUp />
           </button>
         </div>
       </div>
