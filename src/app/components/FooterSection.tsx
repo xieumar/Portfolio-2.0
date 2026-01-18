@@ -49,7 +49,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center">
           <p className="font-body font-bold text-gray-500 dark:text-gray-400 mb-2">
-            © 2026 Zainab. Built with 💜 and ☕.
+            © 2026 Zainab. 
           </p>
           <button
             className="mt-4 p-3 bg-gray-100 dark:bg-gray-800 hover:bg-primary hover:text-white dark:hover:bg-primary text-gray-400 rounded-full transition-all duration-300 group"
