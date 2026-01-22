@@ -1,4 +1,7 @@
-import {ArrowRight} from 'lucide-react';
+'use client'
+
+import { ArrowRight } from 'lucide-react'
+import { motion, Variants } from 'framer-motion'
 
 export default function ProjectsSection() {
   const projects = [
@@ -38,7 +41,16 @@ export default function ProjectsSection() {
       categoryColor: 'text-rose-600',
       categoryBg: 'bg-rose-100',
     },
-  ];
+  ]
+
+  const cardVariants: Variants = {
+    offscreen: { y: 40, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: { type: 'spring', bounce: 0.2, duration: 0.6 },
+    },
+  }
 
   return (
     <section className="py-32 px-6 lg:px-12 relative bg-gray-50 dark:bg-gray-900" id="work">
@@ -54,11 +66,25 @@ export default function ProjectsSection() {
             A selection of projects that showcase my passion for interactive design and clean code.
           </p>
         </div>
+
         <div className="space-y-24">
           {projects.map((project, idx) => (
-            <div key={project.name} className={`group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${idx % 2 === 1 ? 'lg:grid-cols-12' : ''}`}>
+            <motion.div
+              key={project.name}
+              className={`group grid grid-cols-1 lg:grid-cols-12 gap-8 items-center`}
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={{
+                onscreen: { transition: { staggerChildren: 0.1 } },
+              }}
+            >
               {/* Image Card */}
-              <div className={`lg:col-span-7 ${idx % 2 === 1 ? 'order-1' : 'order-2 lg:order-1'} relative`}>
+              <motion.div
+                className={`lg:col-span-7 ${idx % 2 === 1 ? 'order-1' : 'order-2 lg:order-1'} relative`}
+                variants={cardVariants}
+                whileHover={{ y: -6, scale: 1.03, transition: { duration: 0.25 } }}
+              >
                 <div
                   className={`absolute inset-0 ${project.bgShade} rounded-3xl transform ${idx === 0 ? 'rotate-2' : idx === 1 ? '-rotate-2' : 'rotate-1'} transition-transform duration-500 group-hover:${idx === 0 ? 'rotate-1' : idx === 1 ? 'rotate-0' : '-rotate-1'}`}
                 />
@@ -80,10 +106,13 @@ export default function ProjectsSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content Card */}
-              <div className={`lg:col-span-5 ${idx % 2 === 1 ? 'order-2' : 'order-1 lg:order-2'} ${idx % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'}`}>
+              <motion.div
+                className={`lg:col-span-5 ${idx % 2 === 1 ? 'order-2' : 'order-1 lg:order-2'} ${idx % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'}`}
+                variants={cardVariants}
+              >
                 <span
                   className={`inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider ${project.categoryColor} uppercase ${project.categoryBg} rounded-full`}
                 >
@@ -109,22 +138,23 @@ export default function ProjectsSection() {
                   className="inline-flex items-center gap-2 font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors text-lg relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left"
                   href="#"
                 >
-                  View Case Study{' '}
-                  <ArrowRight />
+                  View Case Study <ArrowRight />
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
+
         <div className="mt-20 text-center">
-          <a
+          <motion.a
             className="inline-block px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-xl border-2 border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             href="#"
+            whileHover={{ scale: 1.02, y: -2 }}
           >
             See More Projects
-          </a>
+          </motion.a>
         </div>
       </div>
     </section>
-  );
+  )
 }
