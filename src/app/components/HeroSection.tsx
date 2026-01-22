@@ -1,7 +1,7 @@
 'use client';
 import FloatingIcons from "@/components/ui/hero/FloatingIcons";
 import Illustration from "@/components/ui/hero/Illustration";
-import { Mail, MoveRight, Github, Twitter } from 'lucide-react'
+import { Mail, MoveRight } from 'lucide-react'
 
 export default function HeroSection() {
   return (
