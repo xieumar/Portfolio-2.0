@@ -1,6 +1,7 @@
 'use client';
 import FloatingIcons from "@/components/ui/hero/FloatingIcons";
 import Illustration from "@/components/ui/hero/Illustration";
+import InteractivePill from "@/components/ui/hero/InteractivePill";
 import { Mail, MoveRight } from 'lucide-react'
 
 export default function HeroSection() {
@@ -17,9 +18,8 @@ export default function HeroSection() {
               fun
             </span>
             ,
-            <span className="relative inline-block bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 px-6 pt-2 pb-3 rounded-[2rem] transform -rotate-2 hover:rotate-0 transition-transform duration-300 mx-2 shadow-sm border border-purple-200 dark:border-purple-800">
-              interactive
-            </span>
+            <InteractivePill />
+
             <br className="hidden sm:block" />
             things for the{' '}
             <span className="relative whitespace-nowrap">

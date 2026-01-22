@@ -40,14 +40,32 @@ const config: Config = {
                 "pastel-green": "#D1FAE5",
             },
             animation: {
+
                 'float': 'float 6s ease-in-out infinite',
                 'float-delayed': 'float 7s ease-in-out 1s infinite',
                 'float-slow': 'float 8s ease-in-out 2s infinite',
                 'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 'wiggle': 'wiggle 1s ease-in-out infinite',
                 'marquee': 'marquee 25s linear infinite',
+                'heart-up-1': 'heartUp 1.4s ease-in forwards',
+                'heart-up-2': 'heartUp 1.4s 0.3s ease-in forwards',
+                'heart-up-3': 'heartUp 1.4s 0.6s ease-in forwards',
+                'heart-float': 'heartFloat 1.4s ease-in forwards',
             },
             keyframes: {
+                heartUp: {
+                    '0%': { opacity: '0', transform: 'translateY(0) rotate(10deg)' },
+                    '50%': { opacity: '1' },
+                    '65%': { opacity: '1' },
+                    '90%': { opacity: '0', transform: 'translateY(-35vh) scale(1.2) rotate(-10deg)' },
+                    '100%': { opacity: '0' },
+                },
+                heartFloat: {
+                    '0%': { opacity: '0', transform: 'translateY(0) rotate(10deg)' },
+                    '50%': { opacity: '1' },
+                    '90%': { opacity: '0', transform: 'translateY(-35vh) scale(1.2) rotate(-10deg)' },
+                    '100%': { opacity: '0' },
+                },
                 float: {
                     '0%, 100%': { transform: 'translateY(0)' },
                     '50%': { transform: 'translateY(-20px)' },
