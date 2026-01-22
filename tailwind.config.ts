@@ -51,8 +51,18 @@ const config: Config = {
                 'heart-up-2': 'heartUp 1.4s 0.3s ease-in forwards',
                 'heart-up-3': 'heartUp 1.4s 0.6s ease-in forwards',
                 'heart-float': 'heartFloat 1.4s ease-in forwards',
+                'sway': 'sway 3s ease-in-out infinite alternate',
+                'blink': 'blink 1s step-start infinite',
             },
             keyframes: {
+                sway: {
+                    '0%': { transform: 'rotate(-2deg)' },
+                    '100%': { transform: 'rotate(2deg)' },
+                },
+                blink: {
+                    '0%, 50%, 100%': { opacity: '1' },
+                    '25%, 75%': { opacity: '0' },
+                },
                 heartUp: {
                     '0%': { opacity: '0', transform: 'translateY(0) rotate(10deg)' },
                     '50%': { opacity: '1' },
