@@ -1,7 +1,8 @@
 'use client'
 
-import { MapPin, Briefcase, GraduationCap, Coffee, TvMinimalPlay } from 'lucide-react'
+import { MapPin, Briefcase, GraduationCap, Coffee } from 'lucide-react'
 import { motion, Variants, Transition } from 'framer-motion'
+import BackgroundMusicIcon from '@/components/ui/about/BGM'
 
 const transition: Transition = { type: 'spring', bounce: 0.3, duration: 0.6 }
 
@@ -121,24 +122,22 @@ export default function AboutSection() {
             </p>
           </motion.div>
 
-          {/* Gaming */}
+          {/* BGM */}
           <motion.div
-            className="col-span-1 md:col-span-1 row-span-1 bg-green-100 dark:bg-green-900/40 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:shadow-xl transition-shadow duration-300"
+            className="col-span-1 md:col-span-1 row-span-1 bg-pink-100 dark:bg-pink-700 rounded-3xl p-6 flex flex-col items-center justify-center text-center group hover:shadow-xl transition-shadow duration-300"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
-            <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-3 shadow-sm group-hover:rotate-12 transition-transform">
-              <TvMinimalPlay className="text-green-500" />
+            <div className="w-16 h-16 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center mb-3 shadow-sm  transition-transform">
+              <BackgroundMusicIcon />
             </div>
-            <h4 className="font-display text-lg font-bold text-gray-800 dark:text-white">
-              Anime
+            <h4 className="font-display text-lg text-gray-800 dark:text-white">
+              Like BGM? Click play 🙂
             </h4>
-            <span className="text-sm text-gray-600 dark:text-gray-400 font-bold">
-              Frieren Enthusiast
-            </span>
           </motion.div>
+
         </div>
       </div>
     </section>
