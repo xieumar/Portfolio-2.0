@@ -1,8 +1,9 @@
 'use client'
 
-import { MapPin, Briefcase, GraduationCap, Coffee } from 'lucide-react'
+import { MapPin, Briefcase } from 'lucide-react'
 import { motion, Variants, Transition } from 'framer-motion'
 import BackgroundMusicIcon from '@/components/ui/about/BGM'
+import FunFactCard from '@/components/ui/about/FunFacts'
 
 const transition: Transition = { type: 'spring', bounce: 0.3, duration: 0.6 }
 
@@ -47,8 +48,9 @@ export default function AboutSection() {
                 </h3>
                 <p className="mb-2 text-gray-700 dark:text-white text-base sm:text-lg lg:text-xl leading-relaxed font-medium text-justify">
                   I'm a creative developer based in Nigeria. I bridge the gap between{' '}
-                  <strong className="text-green-700 dark:text-green-300">design and engineering</strong>, crafting user interfaces that feel alive. I believe the web should be fun, accessible, and a little bit magical.
+                  <strong className="text-green-700 dark:text-green-300">design and engineering</strong>, crafting user interfaces that feel alive. I believe the web should be fun, accessible, and a little bit magical. I’m powered by tea, curiosity, and random bursts of creativity.
                 </p>
+
               </div>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mt-6">
                 <span className="inline-flex items-center gap-1 px-3 py-1 bg-white/60 dark:bg-black/20 rounded-full text-sm sm:text-base font-bold text-gray-700 dark:text-gray-200">
@@ -69,20 +71,43 @@ export default function AboutSection() {
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
-            <div className="flex justify-between items-start">
-              <h4 className="font-display text-xl font-bold text-gray-800 dark:text-white">
-                Currently Learning
-              </h4>
-              <span className="p-2 bg-white/40 dark:bg-black/20 rounded-full">
-                <GraduationCap className="text-orange-700" />
-              </span>
-            </div>
-            <div className="mt-4 flex flex-col gap-2">
-              <span className="px-4 py-2 bg-white dark:bg-gray-800 rounded-lg font-bold text-gray-800 dark:text-white shadow-sm transform group-hover:scale-105 transition-transform">
-                GSAP
-              </span>
+            <h4 className="font-display text-lg font-bold text-gray-800 dark:text-white">
+              Currently Learning
+            </h4>
+
+            <div className="mt-2 flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <span className="font-bold text-gray-800 dark:text-white text-sm sm:text-base">
+                  GSAP
+                </span>
+
+                <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 overflow-hidden">
+
+                  <motion.div
+                    className="bg-orange-500 h-2.5 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '45%' }}
+                    transition={{ duration: 1.2, ease: 'easeInOut' }}
+                    viewport={{ once: true }}
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <span className="font-bold text-gray-800 dark:text-white text-sm sm:text-base">Micro-interactions</span>
+                <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5 overflow-hidden">
+                  <motion.div
+                    className="bg-green-500 h-2.5 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '70%' }}
+                    transition={{ duration: 1.2, ease: 'easeInOut' }}
+                    viewport={{ once: true }}
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
+
 
           {/* Fuel Source */}
           <motion.div
@@ -92,35 +117,31 @@ export default function AboutSection() {
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
-            <h4 className="font-display text-xl font-bold text-gray-800 dark:text-white mb-2">
+            <h4 className="font-display text-lg font-bold text-gray-800 dark:text-white mb-4">
               Fuel Source
             </h4>
-            <div className="flex flex-col gap-2 mt-4">
-              <div className="flex items-center justify-between p-3 bg-white/50 dark:bg-black/20 rounded-xl backdrop-blur-sm">
-                <span className="font-bold text-gray-700 dark:text-gray-200">Latte</span>
-                <Coffee className="text-indigo-500" />
+
+            <div className="flex flex-wrap gap-2 mt-2">
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-black/20 rounded-full backdrop-blur-sm shadow-sm">
+                <span className="font-semibold text-gray-700 dark:text-gray-200">Tea</span>
+
               </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5">
-                <div className="bg-indigo-500 h-2.5 rounded-full" style={{ width: '85%' }} />
+
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-black/20 rounded-full backdrop-blur-sm shadow-sm">
+                <span className="font-semibold text-gray-700 dark:text-gray-200">My Cats</span>
+
+              </div>
+
+              <div className="flex items-center gap-2 px-4 py-2 bg-white/60 dark:bg-black/20 rounded-full backdrop-blur-sm shadow-sm">
+                <span className="font-semibold text-gray-700 dark:text-gray-200">Touching Grass</span>
+
               </div>
             </div>
           </motion.div>
 
+
           {/* Fun Fact */}
-          <motion.div
-            className="col-span-1 md:col-span-1 row-span-1 bg-yellow-100 dark:bg-yellow-900/40 rounded-3xl p-6 flex flex-col justify-between group hover:shadow-xl transition-shadow duration-300"
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={cardVariants}
-          >
-            <h4 className="font-display text-xl font-bold text-gray-800 dark:text-white">
-              Fun Fact
-            </h4>
-            <p className="text-gray-700 dark:text-gray-300 font-medium italic">
-              "I once tried to teach my cat a trick… it mostly ignored me and then curled up on my notebook instead."
-            </p>
-          </motion.div>
+          <FunFactCard />
 
           {/* BGM */}
           <motion.div

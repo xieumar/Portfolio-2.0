@@ -57,3 +57,21 @@ export const projects: Project[] = [
     categoryBg: 'bg-rose-100',
   },
 ]
+
+export const funFacts = [
+  'Octopuses have three hearts, and two stop beating when they swim. 🐙',
+  'Bananas are berries, but strawberries aren’t. 🍌🍓',
+  'Honey never spoils — archaeologists have found edible honey in 3,000-year-old tombs. 🍯',
+  'A group of flamingos is called a “flamboyance.” 🦩',
+  'You can hear rhubarb grow if you listen carefully in spring. 🌱',
+  'The first computer “bug” was a literal moth stuck in a Harvard computer in 1947. 🐛💻',
+  'The first website is still online — it’s a 1991 CERN page about the World Wide Web. 🌐',
+  'JavaScript was created in 10 days by Brendan Eich in 1995. ⚡',
+  'The original name for JavaScript was Mocha. ☕',
+  'Git’s creator, Linus Torvalds, also created Linux while writing the kernel in his spare time. 🐧',
+  'There’s a programming language called LOLCODE where syntax looks like memes. 😹',
+  'Space smells like burnt steak… according to astronauts. 🚀🥩',
+  'The first emoji was created in 1999 by Shigetaka Kurita for a Japanese mobile platform. 😀',
+  'In the early days of computers, people thought “cyberspace” would be a literal space you could visit. 🛸',
+  'Some AI art generators can hallucinate cats wearing hats on Mars… because why not? 🐱🪐'
+];
