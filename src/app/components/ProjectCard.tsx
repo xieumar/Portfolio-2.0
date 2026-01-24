@@ -11,7 +11,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <div className="mb-6">
         <h4 className="text-sm font-semibold text-slate-900 mb-3">Key Achievements</h4>
         <ul className="space-y-2">
-          {project.highlights.map((highlight, idx) => (
+          {project.highlights?.map((highlight, idx) => (
             <li key={idx} className="text-sm text-slate-600 flex items-start gap-2">
               <span className="text-slate-400 mt-1">•</span>
               <span>{highlight}</span>

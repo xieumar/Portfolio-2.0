@@ -6,11 +6,13 @@ export interface Project {
   tags: string[]
   link?: string
   icon?: string 
+  highlights?: string[]
   bgColor?: string
   bgShade?: string
   category?: string
   categoryColor?: string
   categoryBg?: string
+  github?: string
 }
 
 export const projects: Project[] = [
