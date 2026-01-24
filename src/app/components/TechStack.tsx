@@ -10,10 +10,10 @@ export default function TechStack() {
   ]
 
   const pastelColors = [
-    'var(--pastel-blue)',
-    'var(--pastel-pink)',
-    'var(--pastel-yellow)',
-    'var(--pastel-green)',
+    'bg-pastel-blue dark:bg-lavender-dark border-pastel-blue dark:border-lavender-dark',
+    'bg-pastel-pink dark:bg-pink-700 border-pastel-pink dark:border-pink-700',
+    'bg-pastel-yellow dark:bg-yellow-700 border-pastel-yellow dark:border-yellow-700',
+    'bg-pastel-green dark:bg-sage-dark border-pastel-green dark:border-sage-dark',
   ]
 
   const cardVariants: Variants = {
@@ -24,7 +24,7 @@ export default function TechStack() {
   return (
     <section
       id="toolbox"
-      className="py-16 px-3 lg:px-6 bg-[var(--pastel-purple)] dark:bg-[var(--background-dark)] overflow-hidden relative"
+      className="py-16 px-3 lg:px-6 bg-pastel-purple dark:bg-background-dark overflow-hidden relative"
     >
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
@@ -42,13 +42,11 @@ export default function TechStack() {
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
           variants={{
-            onscreen: {
-              transition: { staggerChildren: 0.07 },
-            },
+            onscreen: { transition: { staggerChildren: 0.07 } },
           }}
         >
           {technologies.map((tech, index) => {
-            const bgColor = pastelColors[index % pastelColors.length]
+            const bgClass = pastelColors[index % pastelColors.length]
 
             return (
               <motion.div
@@ -60,13 +58,9 @@ export default function TechStack() {
                   boxShadow: '0 12px 30px rgba(0,0,0,0.12)',
                   transition: { duration: 0.25 },
                 }}
-                className="flex items-center justify-center p-4 sm:p-5 rounded-2xl border transition-colors cursor-pointer"
-                style={{
-                  backgroundColor: bgColor,
-                  borderColor: bgColor,
-                }}
+                className={`flex items-center justify-center p-4 sm:p-5 rounded-2xl border transition-colors cursor-pointer ${bgClass}`}
               >
-                <span className="font-display font-semibold text-sm sm:text-base text-gray-800 dark:text-gray-500 text-center">
+                <span className="font-display font-semibold text-sm sm:text-base text-gray-800 dark:text-gray-200 text-center">
                   {tech}
                 </span>
               </motion.div>
