@@ -1,71 +1,59 @@
-// Types
+// data.ts
 export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  tags: string[];
-  highlights: string[];
-  link?: string;
-  github?: string;
+  id: string
+  title: string
+  description: string
+  tags: string[]
+  link?: string
+  icon?: string 
+  bgColor?: string
+  bgShade?: string
+  category?: string
+  categoryColor?: string
+  categoryBg?: string
 }
-
-export interface Skill {
-  category: string;
-  items: string[];
-}
-
-// Data
-export const skills: Skill[] = [
-  {
-    category: "Core",
-    items: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)"]
-  },
-  {
-    category: "Styling",
-    items: ["Tailwind CSS", "CSS3", "Responsive Design", "Accessibility"]
-  },
-  {
-    category: "Tools & Practices",
-    items: ["Git", "Component Architecture", "Performance Optimization", "Testing"]
-  },
-  {
-    category: "Additional",
-    items: ["Node.js", "REST APIs", "State Management", "Build Tools"]
-  }
-];
 
 export const projects: Project[] = [
   {
-    id: "1",
-    title: "E-Commerce Dashboard",
-    description: "A comprehensive admin dashboard for managing products, orders, and analytics with real-time updates.",
-    tags: ["React", "TypeScript", "Chart.js", "REST API"],
-    highlights: [
-      "Built reusable component library with 40+ components",
-      "Implemented complex data tables with sorting, filtering, and pagination",
-      "Optimized performance achieving 95+ Lighthouse score"
-    ]
+    id: '1',
+    title: 'Telex',
+    description:
+      'A team communication platform reimagined with AI at its core, allowing users to collaborate, delegate to agents, and automate repetitive work without leaving the chat interface.',
+    tags: ['Next.js', 'Tailwind', 'Shadcn'],
+    link: 'https://telex.im/',
+    icon: '/telex.png', 
+    bgColor: 'bg-[#C7D2FE] dark:bg-[#4338CA]',
+    bgShade: 'bg-[#E0E7FF] dark:bg-[#312E81]',
+    category: 'Collaboration Platform',
+    categoryColor: 'text-primary',
+    categoryBg: 'bg-primary/10',
   },
   {
-    id: "2",
-    title: "Task Management Platform",
-    description: "Collaborative project management tool with drag-and-drop kanban boards and team workflows.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "State Management"],
-    highlights: [
-      "Architected scalable component structure for 50k+ users",
-      "Integrated drag-and-drop with custom hooks and animations",
-      "Achieved 100% accessibility compliance (WCAG 2.1 AA)"
-    ]
+    id: '2',
+    title: 'Audiophile',
+    description:
+      'A clean and responsive shopping platform for high-end audio products, focused on intuitive navigation, secure payments, and conversion-optimized checkout flows.',
+    tags: ['Next.js', 'Convex', 'Tailwind'],
+    link: 'https://audiophilehng.netlify.app/',
+    icon: '/Audiophile.png',
+    bgColor: 'bg-[#A7F3D0] dark:bg-[#065F46]',
+    bgShade: 'bg-[#D1FAE5] dark:bg-[#064E3B]',
+    category: 'E-Commerce',
+    categoryColor: 'text-green-600',
+    categoryBg: 'bg-green-100',
   },
   {
-    id: "3",
-    title: "Developer Portfolio System",
-    description: "CMS-powered portfolio generator enabling developers to showcase projects with minimal setup.",
-    tags: ["Next.js", "MDX", "SEO", "Performance"],
-    highlights: [
-      "Engineered static site generation for optimal performance",
-      "Implemented comprehensive SEO strategy with metadata optimization",
-      "Created flexible theming system with CSS variables"
-    ]
-  }
-];
+    id: '3',
+    title: 'Tourify',
+    description:
+      'A modern onboarding solution for SaaS products, designed to simplify user adoption through customizable multi-step tours, embeddable widgets, and contextual in-app guidance',
+    tags: ['Shepherd.js', 'Next.js', 'Supabase'],
+    link: 'https://tour-app-virid-kappa.vercel.app/',
+    icon: '/tourify.png',
+    bgColor: 'bg-[#FECDD3] dark:bg-[#9F1239]',
+    bgShade: 'bg-[#FFE4E6] dark:bg-[#881337]',
+    category: 'Product Onboarding',
+    categoryColor: 'text-rose-600',
+    categoryBg: 'bg-rose-100',
+  },
+]
