@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="flex items-center gap-6 mb-8">
           <a
             className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-white hover:bg-pink-500 transition-all duration-300"
-            href="https://twitter.com"
+            href="https://x.com/Xiaoma0_"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -24,7 +24,7 @@ export default function Footer() {
           </a>
           <a
             className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-white hover:bg-gray-900 transition-all duration-300"
-            href="https://github.com"
+            href="https://github.com/xieumar"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -38,7 +38,7 @@ export default function Footer() {
           </a>
           <a
             className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-white hover:bg-blue-600 transition-all duration-300"
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/zainab-umar-ibrahim-48929b1ba/"
             target="_blank"
             rel="noopener noreferrer"
           >

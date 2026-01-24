@@ -47,8 +47,8 @@ export default function InteractivePill() {
 
   return (
     <div
-      className="relative inline-block bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 
-        px-3 pt-2 pb-3 rounded-[2rem] transform -rotate-2 
+      className="relative inline-block ml-0 lg:-ml-10 mt-2 bg-purple-100 dark:bg-purple-900/50 text-purple-600 dark:text-purple-300 
+        px-3 pt-2 pb-4 rounded-[2rem] transform -rotate-2 
         hover:rotate-0 transition-transform duration-300 mx-2 shadow-sm border border-purple-200 dark:border-purple-800 
         overflow-visible text-center"
       style={{ width: `${longestWord.length * 1}ch` }} 
