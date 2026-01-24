@@ -71,8 +71,30 @@ function Illustration() {
           <div className="absolute bottom-10 left-8 w-4 h-10 bg-green-400 rounded-full rounded-br-none transform rotate-12 border-r-2 border-green-600 animate-sway" />
           <div className="absolute bottom-10 left-4 w-4 h-8 bg-green-500 rounded-full rounded-bl-none transform -rotate-12 border-l-2 border-green-700 animate-sway" />
 
-          {/* Tooltip */}
-          <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+          <div
+            className="
+      absolute bottom-full mb-2
+      left-1/2 -translate-x-1/2
+
+      max-w-[90vw]
+      px-3 py-1.5
+
+      bg-gray-800 text-white text-xs
+      rounded-lg shadow-lg
+
+      opacity-0 scale-95
+      transition-all duration-200
+
+      pointer-events-none
+      whitespace-nowrap
+
+      group-hover:opacity-100
+      group-hover:scale-100
+
+      group-focus-within:opacity-100
+      group-focus-within:scale-100
+    "
+          >
             Careful! You might get pricked 🌵
           </div>
         </div>
@@ -86,7 +108,7 @@ function Illustration() {
         </div>
 
         {/* Lamp */}
-        <div className="absolute top-0 right-1/4 transform translate-x-1/2 w-16 h-32 z-30 flex flex-col items-center ">
+        <div className="absolute -top-5 sm:top-0 right-1/4 transform translate-x-1/2 w-16 h-32 z-30 flex flex-col items-center ">
           <div className="w-1 h-20 bg-gray-400 dark:bg-gray-600" />
           <div className="w-16 h-12 bg-purple-400 dark:bg-purple-600 rounded-t-full rounded-b-lg shadow-lg relative z-10" />
           <div className="w-8 h-8 bg-yellow-200 dark:bg-yellow-100 rounded-full -mt-4 lamp-glow animate-pulse" />
