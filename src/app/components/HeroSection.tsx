@@ -2,7 +2,7 @@
 import FloatingIcons from "@/components/ui/hero/FloatingIcons";
 import Illustration from "@/components/ui/hero/Illustration";
 import InteractivePill from "@/components/ui/hero/InteractivePill";
-import { Mail, MoveRight } from 'lucide-react'
+import { Mail, Download } from 'lucide-react'
 
 export default function HeroSection() {
   return (
@@ -38,11 +38,15 @@ export default function HeroSection() {
               Get in touch <Mail size={20} />
             </a>
             <a
-              className="px-8 py-4 bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-xl border-2 border-gray-200 hover:transform hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center gap-2"
-              href="#work"
+              className="group px-8 py-4 bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-bold rounded-xl border-2 border-gray-200 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+              href="/Zainab Umar Ibrahim CV.pdf"
+              download
             >
-              View Projects <MoveRight />
+              Download CV
+              <Download size={20}
+              />
             </a>
+
           </div>
         </div>
       </div>
