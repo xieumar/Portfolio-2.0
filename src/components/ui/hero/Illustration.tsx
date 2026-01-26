@@ -74,7 +74,7 @@ function Illustration() {
           <div
             className="
       absolute bottom-full mb-2
-      left-1/2 -translate-x-1/2 sm:ml-5
+      left-1/2 -translate-x-1/2 sm:ml-10
 
       max-w-[90vw]
       px-3 py-1.5
