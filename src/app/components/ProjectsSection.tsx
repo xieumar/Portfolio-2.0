@@ -41,7 +41,7 @@ export default function ProjectsSection() {
             >
               {/* Image Card */}
               <motion.div
-                className={`lg:col-span-7 ${idx % 2 === 1 ? 'order-1' : 'order-2 lg:order-1'} relative`}
+                className={`lg:col-span-7 ${idx % 2 === 1 ? 'lg:order-2' : 'lg:order-1'} relative`}
                 variants={cardVariants}
                 whileHover={{ y: -6, scale: 1.03, transition: { duration: 0.25 } }}
               >
@@ -51,17 +51,17 @@ export default function ProjectsSection() {
                     }`}
                 />
                 <div
-                  className={`relative ${project.bgColor || 'bg-white'} rounded-3xl p-8 sm:p-12 overflow-hidden min-h-[400px] flex items-center justify-center work-card-shadow transition-transform duration-500 group-hover:-translate-y-2`}
+                  className={`relative ${project.bgColor || 'bg-white'} rounded-3xl p-4 sm:p-12 overflow-hidden min-h-[250px] flex items-center justify-center work-card-shadow transition-transform duration-500 group-hover:-translate-y-2`}
                 >
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/20 rounded-full blur-3xl -mr-16 -mt-16" />
-                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/20 rounded-full blur-2xl -ml-12 -mb-12" />
-                  <div className="relative w-full max-w-lg aspect-video bg-white dark:bg-gray-800 rounded-xl shadow-2xl border-4 border-white/50 dark:border-gray-700 overflow-hidden flex flex-col group-hover:scale-105 transition-transform duration-500">
-                    <div className="h-6 bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 flex items-center px-3 gap-1.5">
+                    <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/20 rounded-full blur-2xl -ml-12 -mb-12" />
+                      <div className="relative w-full max-w-lg aspect-video bg-white dark:bg-gray-800 rounded-xl shadow-2xl border-4 border-white/50 dark:border-gray-700 overflow-hidden flex flex-col group-hover:scale-105 transition-transform duration-500">
+                      <div className="h-6 bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 flex items-center px-3 gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
                       <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                    </div>
-                    <div className="flex-1 relative">
+                      </div>
+                      <div className="flex-1 relative">
                       {project.icon && (
                         <Image
                           src={project.icon}
@@ -78,7 +78,7 @@ export default function ProjectsSection() {
 
               {/* Content Card */}
               <motion.div
-                className={`lg:col-span-5 ${idx % 2 === 1 ? 'order-2' : 'order-1 lg:order-2'} ${idx % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'
+                className={`lg:col-span-5 ${idx % 2 === 1 ? 'lg:order-1' : 'lg:order-2'} ${idx % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'
                   }`}
                 variants={cardVariants}
               >
@@ -107,7 +107,7 @@ export default function ProjectsSection() {
                   </ul>
                 )}
                 <a
-                  className="inline-flex items-center gap-2 font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors text-lg relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left"
+                  className="inline-flex items-center gap-2 font-bold text-gray-900 dark:text-white hover:text-primary transition-colors text-lg relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-primary after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left"
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
