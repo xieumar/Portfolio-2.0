@@ -15,7 +15,7 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section className="py-32 px-6 lg:px-12 relative bg-gray-50 dark:bg-gray-900" id="work">
+    <section className="py-20 sm:py-28 px-6 lg:px-12 relative bg-gray-50 dark:bg-gray-900" id="work">
       <div className="container mx-auto max-w-7xl">
         <div className="mb-16 text-center">
           <div className="inline-block relative">
