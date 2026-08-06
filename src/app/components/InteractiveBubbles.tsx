@@ -25,48 +25,95 @@ export interface InteractiveBubblesProps {
   className?: string
   safeCenter?: boolean
   repelRadius?: number
-  repelStrength?: number
 }
 
 function BubbleItem({
   bubble,
   mousePos,
-  repelRadius,
-  repelStrength,
+  repelRadius = 90,
 }: {
   bubble: BubbleConfig
   mousePos: { x: number; y: number } | null
-  repelRadius: number
-  repelStrength: number
+  repelRadius?: number
 }) {
   const ref = useRef<HTMLDivElement>(null)
-  const [repel, setRepel] = useState({ x: 0, y: 0 })
+  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  const lastKickTimeRef = useRef(0)
 
   useEffect(() => {
-    if (!mousePos || !ref.current) {
-      setRepel({ x: 0, y: 0 })
-      return
-    }
+    if (!mousePos || !ref.current) return
 
-    const rect = ref.current.getBoundingClientRect()
-    const bubbleCenterX = rect.left + rect.width / 2
-    const bubbleCenterY = rect.top + rect.height / 2
+    const bubbleEl = ref.current
+    const parentEl = bubbleEl.parentElement
+    if (!parentEl) return
+
+    const parentRect = parentEl.getBoundingClientRect()
+    const bubbleRect = bubbleEl.getBoundingClientRect()
+
+    const bubbleCenterX = bubbleRect.left + bubbleRect.width / 2
+    const bubbleCenterY = bubbleRect.top + bubbleRect.height / 2
 
     const dx = bubbleCenterX - mousePos.x
     const dy = bubbleCenterY - mousePos.y
     const distance = Math.hypot(dx, dy)
 
-    if (distance < repelRadius && distance > 0) {
-      const power = (1 - distance / repelRadius) * repelStrength
-      const angle = Math.atan2(dy, dx)
-      setRepel({
-        x: Math.cos(angle) * power,
-        y: Math.sin(angle) * power,
+    const now = Date.now()
+    if (distance < repelRadius && now - lastKickTimeRef.current > 140) {
+      lastKickTimeRef.current = now
+
+      // Kick trajectory away from mouse with random deflection angle (-35° to +35°)
+      const baseAngle = Math.atan2(dy, dx)
+      const randomAngle = baseAngle + (Math.random() - 0.5) * 0.8
+
+      // Kick impulse distance (between 60px and 120px)
+      const kickDistance = 60 + Math.random() * 60
+
+      const kickVx = Math.cos(randomAngle) * kickDistance
+      const kickVy = Math.sin(randomAngle) * kickDistance
+
+      // Resting coordinate inside parent container in pixels
+      const baseX = (bubble.leftPercent / 100) * parentRect.width
+      const baseY = (bubble.topPercent / 100) * parentRect.height
+
+      // Safe container boundaries with padding to ensure zero clipping
+      const padding = 10
+      const minX = bubble.size / 2 + padding
+      const maxX = parentRect.width - bubble.size / 2 - padding
+      const minY = bubble.size / 2 + padding
+      const maxY = parentRect.height - bubble.size / 2 - padding
+
+      setOffset((prev) => {
+        let targetX = baseX + prev.x + kickVx
+        let targetY = baseY + prev.y + kickVy
+
+        // Elastic wall bounce: bounces inward when hitting any edge
+        if (targetX > maxX) {
+          const overshoot = targetX - maxX
+          targetX = maxX - Math.min(overshoot * 0.85, (maxX - minX) * 0.4)
+        } else if (targetX < minX) {
+          const overshoot = minX - targetX
+          targetX = minX + Math.min(overshoot * 0.85, (maxX - minX) * 0.4)
+        }
+
+        if (targetY > maxY) {
+          const overshoot = targetY - maxY
+          targetY = maxY - Math.min(overshoot * 0.85, (maxY - minY) * 0.4)
+        } else if (targetY < minY) {
+          const overshoot = minY - targetY
+          targetY = minY + Math.min(overshoot * 0.85, (maxY - minY) * 0.4)
+        }
+
+        // Hard clamp safely within boundaries
+        targetX = Math.max(minX, Math.min(maxX, targetX))
+        targetY = Math.max(minY, Math.min(maxY, targetY))
+
+        return {
+          x: targetX - baseX,
+          y: targetY - baseY,
+        }
       })
-    } else {
-      setRepel({ x: 0, y: 0 })
     }
-  }, [mousePos, repelRadius, repelStrength])
+  }, [mousePos, repelRadius, bubble.leftPercent, bubble.topPercent, bubble.size])
 
   return (
     <motion.div
@@ -81,12 +128,14 @@ function BubbleItem({
       className={`rounded-full border shadow-sm backdrop-blur-xs z-20 pointer-events-none relative overflow-hidden ${bubble.colorClass}`}
       initial={false}
       animate={{
-        x: repel.x,
-        y: repel.y,
+        x: offset.x,
+        y: offset.y,
       }}
       transition={{
-        x: { type: 'spring', stiffness: 260, damping: 18 },
-        y: { type: 'spring', stiffness: 260, damping: 18 },
+        type: 'spring',
+        stiffness: 150,
+        damping: 18,
+        mass: 0.8,
       }}
     >
       {/* Soft glossy specular highlight */}
@@ -99,8 +148,7 @@ export default function InteractiveBubbles({
   count = 22,
   className = '',
   safeCenter = true,
-  repelRadius = 140,
-  repelStrength = 55,
+  repelRadius = 90,
 }: InteractiveBubblesProps) {
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null)
 
@@ -166,7 +214,6 @@ export default function InteractiveBubbles({
           bubble={bubble}
           mousePos={mousePos}
           repelRadius={repelRadius}
-          repelStrength={repelStrength}
         />
       ))}
     </div>
