@@ -47,6 +47,10 @@
   --pastel-yellow: #FEF3C7;
   --pastel-green: #E0F2FE;
 }
+  html {
+    scroll-behavior: smooth;
+  }
+
   html,
   body {
     font-family: 'Nunito', sans-serif;
