@@ -5,6 +5,9 @@ import AppThemeProvider from './providers/theme-provider'
 export const metadata: Metadata = {
   title: 'Zainab | Frontend Developer ',
   description: 'Creative frontend developer and designer building interactive experiences for the web.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
