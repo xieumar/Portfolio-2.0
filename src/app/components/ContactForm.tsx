@@ -156,7 +156,7 @@ export default function ContactSection() {
           {/* Left Column: Form Card */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-7 flex flex-col justify-between bg-white dark:bg-gray-800 rounded-3xl p-7 sm:p-9 border border-gray-100 dark:border-gray-700/50 relative overflow-hidden group hover:shadow-xl transition-shadow duration-300 h-full"
+            className="lg:col-span-7 flex flex-col justify-between bg-white dark:bg-gray-800 rounded-3xl p-7 sm:p-9 border border-gray-100 dark:border-gray-700/50 relative overflow-hidden h-full"
           >
             {/* Ambient decorative blobs */}
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-100 dark:bg-purple-900/30 rounded-full blur-3xl pointer-events-none" />
@@ -256,7 +256,7 @@ export default function ContactSection() {
           {/* Right Column: Single Combined Bento Card */}
           <motion.div
             variants={cardVariants}
-            className="lg:col-span-5 bg-pastel-blue dark:bg-lavender-dark rounded-3xl p-7 sm:p-8 flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-shadow duration-300 h-full"
+            className="lg:col-span-5 bg-pastel-blue dark:bg-lavender-dark rounded-3xl p-7 sm:p-8 flex flex-col justify-between relative overflow-hidden h-full"
           >
             <div>
               <h3 className="font-display text-2xl font-bold text-gray-800 dark:text-white mb-5">
