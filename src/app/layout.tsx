@@ -8,6 +8,24 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
   },
+  openGraph: {
+    title: 'Zainab | Frontend Developer',
+    description: 'Creative frontend developer building interactive experiences for the web.',
+    images: [
+      {
+        url: '/thumbnail.png',
+        width: 1200,
+        height: 630,
+        alt: 'Zainab | Frontend Developer Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zainab | Frontend Developer',
+    description: 'Creative frontend developer building interactive experiences for the web.',
+    images: ['/thumbnail.png'],
+  },
 };
 
 export default function RootLayout({
