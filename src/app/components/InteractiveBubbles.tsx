@@ -4,12 +4,12 @@ import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const PASTEL_COLORS = [
-  'bg-pastel-purple/85 dark:bg-purple-900/60 border-purple-200/80 dark:border-purple-600/40 shadow-purple-400/20',
-  'bg-pastel-blue/85 dark:bg-sky-900/60 border-sky-200/80 dark:border-sky-600/40 shadow-sky-400/20',
-  'bg-pastel-pink/85 dark:bg-pink-900/60 border-pink-200/80 dark:border-pink-600/40 shadow-pink-400/20',
-  'bg-pastel-yellow/85 dark:bg-amber-900/60 border-amber-200/80 dark:border-amber-600/40 shadow-amber-400/20',
-  'bg-pastel-green/85 dark:bg-emerald-900/60 border-emerald-200/80 dark:border-emerald-600/40 shadow-emerald-400/20',
-  'bg-lavender-deep/75 dark:bg-indigo-900/60 border-indigo-200/80 dark:border-indigo-600/40 shadow-indigo-400/20',
+  'bg-pastel-purple/85 dark:bg-purple-400/25 border-purple-200/80 dark:border-purple-300/30 shadow-sm',
+  'bg-pastel-blue/85 dark:bg-sky-400/25 border-sky-200/80 dark:border-sky-300/30 shadow-sm',
+  'bg-pastel-pink/85 dark:bg-pink-400/25 border-pink-200/80 dark:border-pink-300/30 shadow-sm',
+  'bg-pastel-yellow/85 dark:bg-amber-300/25 border-amber-200/80 dark:border-amber-300/30 shadow-sm',
+  'bg-pastel-green/85 dark:bg-emerald-400/25 border-emerald-200/80 dark:border-emerald-300/30 shadow-sm',
+  'bg-lavender-deep/75 dark:bg-indigo-400/25 border-indigo-200/80 dark:border-indigo-300/30 shadow-sm',
 ]
 
 export interface BubbleConfig {
@@ -61,7 +61,7 @@ function BubbleItem({
     if (distance < repelRadius && now - lastKickTimeRef.current > 140) {
       lastKickTimeRef.current = now
 
-      // Kick trajectory away from mouse with random deflection angle (-35° to +35°)
+      // Kick trajectory away from mouse with randomized deflection angle (-35° to +35°)
       const baseAngle = Math.atan2(dy, dx)
       const randomAngle = baseAngle + (Math.random() - 0.5) * 0.8
 
@@ -125,7 +125,7 @@ function BubbleItem({
         width: bubble.size,
         height: bubble.size,
       }}
-      className={`rounded-full border shadow-sm backdrop-blur-xs z-20 pointer-events-none relative overflow-hidden ${bubble.colorClass}`}
+      className={`rounded-full border backdrop-blur-xs z-20 pointer-events-none relative overflow-hidden transition-colors duration-300 ${bubble.colorClass}`}
       initial={false}
       animate={{
         x: offset.x,
@@ -138,8 +138,8 @@ function BubbleItem({
         mass: 0.8,
       }}
     >
-      {/* Soft glossy specular highlight */}
-      <div className="absolute top-1 left-1.5 w-1/3 h-1/3 rounded-full bg-white/45 pointer-events-none" />
+      {/* Clean, simple specular highlight dot matching light mode style */}
+      <div className="absolute top-1 left-1.5 w-1/3 h-1/3 rounded-full bg-white/45 dark:bg-white/20 pointer-events-none" />
     </motion.div>
   )
 }
