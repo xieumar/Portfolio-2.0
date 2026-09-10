@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, X, Mail, ExternalLink } from 'lucide-react'
+import { ArrowRight, X, Mail, ExternalLink, Loader2 } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { FormEvent, useState } from 'react'
 import { motion, Variants, Transition, AnimatePresence } from 'framer-motion'
@@ -100,7 +100,7 @@ export default function ContactSection() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    if (!validateAll()) return
+    if (status === 'sending' || !validateAll()) return
 
     setStatus('sending')
 
@@ -167,7 +167,7 @@ export default function ContactSection() {
               className="space-y-5 flex flex-col justify-between flex-1 relative z-10"
               onSubmit={handleSubmit}
             >
-              <div className="space-y-5">
+              <fieldset disabled={status === 'sending'} className="space-y-5">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {/* Name Input */}
                   <div>
@@ -175,7 +175,8 @@ export default function ContactSection() {
                       Name
                     </label>
                     <input
-                      className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700
+                      disabled={status === 'sending'}
+                      className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700 disabled:opacity-60 disabled:cursor-not-allowed
                         ${errors.name ? 'border-red-400 focus:border-red-500' : 'border-gray-100 dark:border-gray-600 focus:border-primary'}
                       `}
                       placeholder="John Doe"
@@ -197,7 +198,8 @@ export default function ContactSection() {
                       Email
                     </label>
                     <input
-                      className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700
+                      disabled={status === 'sending'}
+                      className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700 disabled:opacity-60 disabled:cursor-not-allowed
                         ${errors.email ? 'border-red-400 focus:border-red-500' : 'border-gray-100 dark:border-gray-600 focus:border-primary'}
                       `}
                       placeholder="hello@example.com"
@@ -220,7 +222,8 @@ export default function ContactSection() {
                     Message
                   </label>
                   <textarea
-                    className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all resize-none dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700
+                    disabled={status === 'sending'}
+                    className={`w-full px-5 py-3.5 rounded-2xl bg-gray-50 dark:bg-gray-700/60 border-2 transition-all resize-none dark:text-white focus:outline-none focus:bg-white dark:focus:bg-gray-700 disabled:opacity-60 disabled:cursor-not-allowed
                       ${errors.message ? 'border-red-400 focus:border-red-500' : 'border-gray-100 dark:border-gray-600 focus:border-primary'}
                     `}
                     rows={4}
@@ -235,19 +238,28 @@ export default function ContactSection() {
                     </p>
                   )}
                 </div>
-              </div>
+              </fieldset>
 
               {/* Submit Button */}
               <div className="pt-2">
                 <motion.button
-                  className="w-full sm:w-auto px-8 py-3.5 bg-primary hover:bg-violet-600 text-white font-display font-bold text-base sm:text-lg rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2.5 transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:shadow-none"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-primary hover:bg-violet-600 text-white font-display font-bold text-base sm:text-lg rounded-2xl shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-primary disabled:hover:shadow-none"
                   type="submit"
                   disabled={!isFormValid || status === 'sending'}
                   whileHover={isFormValid && status === 'idle' ? { scale: 1.02, y: -2 } : {}}
                   whileTap={isFormValid && status === 'idle' ? { scale: 0.98 } : {}}
                 >
-                  <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
-                  <ArrowRight className="w-5 h-5" />
+                  {status === 'sending' ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Send Message</span>
+                      <ArrowRight className="w-5 h-5" />
+                    </>
+                  )}
                 </motion.button>
               </div>
             </form>
