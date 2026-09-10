@@ -60,12 +60,12 @@ const COMMANDS: Record<string, (args: string[]) => React.ReactNode> = {
         <span className="text-gray-600 dark:text-gray-400">— Visual SQL & API Query Builder</span>
       </div>
       <div>
-        <span className="text-amber-700 dark:text-yellow-300 font-bold">2. Audiophile</span>{' '}
-        <span className="text-gray-600 dark:text-gray-400">— High-End Audio E-Commerce</span>
+        <span className="text-amber-700 dark:text-yellow-300 font-bold">2. Zedu</span>{' '}
+        <span className="text-gray-600 dark:text-gray-400">— EdTech & Cohort Communication Platform</span>
       </div>
       <div>
-        <span className="text-amber-700 dark:text-yellow-300 font-bold">3. Invio</span>{' '}
-        <span className="text-gray-600 dark:text-gray-400">— Production Invoicing Platform</span>
+        <span className="text-amber-700 dark:text-yellow-300 font-bold">3. Audiophile</span>{' '}
+        <span className="text-gray-600 dark:text-gray-400">— High-End Audio E-Commerce</span>
       </div>
     </div>
   ),

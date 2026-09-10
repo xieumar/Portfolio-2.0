@@ -32,10 +32,24 @@ export const projects: Project[] = [
   },
   {
     id: '2',
+    title: 'Zedu',
+    description:
+      'A collaborative learning and communication platform built for bootcamps and educational communities, featuring structured cohort channels, the Buzz interaction feature, and seamless file management workflows.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'WebSockets'],
+    link: 'https://zedu.chat/',
+    icon: '/zedu.png',
+    bgColor: 'bg-[#DDD6FE] dark:bg-[#5B21B6]',
+    bgShade: 'bg-[#EDE9FE] dark:bg-[#4C1D95]',
+    category: 'EdTech & Collaboration',
+    categoryColor: 'text-purple-600',
+    categoryBg: 'bg-purple-100',
+  },
+  {
+    id: '3',
     title: 'Audiophile',
     description:
       'A clean and responsive shopping platform for high-end audio products, focused on intuitive navigation, secure payments, and conversion-optimized checkout flows.',
-    tags: ['Next.js', 'Convex', 'Tailwind'],
+    tags: ['Next.js', 'TypeScript', 'Convex', 'Tailwind CSS'],
     link: 'https://audiophilehng.netlify.app/',
     icon: '/Audiophile.png',
     bgColor: 'bg-[#A7F3D0] dark:bg-[#065F46]',
@@ -43,20 +57,6 @@ export const projects: Project[] = [
     category: 'E-Commerce',
     categoryColor: 'text-green-600',
     categoryBg: 'bg-green-100',
-  },
-  {
-    id: '3',
-    title: 'Invio',
-    description:
-      'A production-ready invoicing platform that enables users to create, manage, and track invoices through an intuitive interface featuring real-time filtering, lifecycle management, and responsive design.',
-    tags: ['Next.js', 'React Hook Form', 'Zod', 'Tailwind CSS'],
-    link: 'https://invio14.vercel.app/',
-    icon: '/invoiceapp.png',
-    bgColor: 'bg-[#FECDD3] dark:bg-[#9F1239]',
-    bgShade: 'bg-[#FFE4E6] dark:bg-[#881337]',
-    category: 'Invoice Management',
-    categoryColor: 'text-rose-600',
-    categoryBg: 'bg-rose-100',
   },
 ]
 
