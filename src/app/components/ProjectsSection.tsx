@@ -67,7 +67,7 @@ export default function ProjectsSection() {
                           src={project.icon}
                           alt={project.title}
                           fill
-                          className="object-cover w-full h-full"
+                          className={`object-cover ${project.imagePosition || 'object-top'} w-full h-full`}
                         />
                       )}
                     </div>

@@ -6,6 +6,7 @@ export interface Project {
   tags: string[]
   link?: string
   icon?: string 
+  imagePosition?: string
   highlights?: string[]
   bgColor?: string
   bgShade?: string
